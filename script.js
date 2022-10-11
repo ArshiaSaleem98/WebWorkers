@@ -1,6 +1,5 @@
 const worker = new Worker("worker.js");
 
-
 const sumButton = document.getElementById("sumButton");
 const backgroundButton = document.getElementById("backgroundButton");
 sumButton.addEventListener("click", function () {
@@ -11,10 +10,9 @@ sumButton.addEventListener("click", function () {
   alert(`total sum ${sum}`);
 });
 
-
-// worker.onmessage= function(message){
-//   console.log(message)
-// }
+worker.onmessage = function (message) {
+  console.log(message);
+};
 
 backgroundButton.addEventListener("click", function () {
   if (document.getElementById("container").style.backgroundColor != "blue") {
